@@ -17,6 +17,7 @@ Requirements:
 ---
 
 To build and run the project:
+
 1. Either `ssh` into the Raspberry Pi or use the command line on the Raspberry Pi directly.
 2. `cd` into the project directory.
 3. Run `make`.
