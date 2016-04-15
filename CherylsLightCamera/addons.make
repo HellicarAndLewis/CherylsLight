@@ -1,0 +1,3 @@
+ofxRPiCameraVideoGrabber
+ofxCv
+./addons/ofxWiringPi
