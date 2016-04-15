@@ -5,7 +5,7 @@ This is the project that generates the 3D shapes from the song. All shapes are g
 
 Requirements:
 
-* OF 0.9.4 (0.9.0+ probably works as well)
+* OF 0.9.3 (0.9.0+ probably works as well)
 * Have the [ofxFft](https://github.com/kylemcdonald/ofxFft) addon installed. (**Note:** The precompiled binary for FFTW provided by the ofxFft repo might not work and you might need to compile one yourself)
 
 ---
@@ -22,3 +22,5 @@ The data folder will be all the input and output for the program:
 ---
 
 Currently the program will read prerecorded FFT data from `song.txt`. If you need to record a new set of FFT data, comment and uncomment the relevant lines in `ofApp.cpp` and `fftShapes.cpp` as instructed by the code comments, run the program once and let the song play through its entirety and you will have a new `song.txt`!
+
+The bottom of some meshes are not properly closed up so may need to be fixed either in the program or after exporting.
