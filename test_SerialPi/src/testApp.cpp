@@ -1,3 +1,7 @@
+//RPI VERSION
+
+#define NUM_CRYSTALS 7
+
 #include "testApp.h"
 
 using namespace ofxCv;
@@ -11,7 +15,6 @@ void testApp::setup() {
 	
     panel.setup("Optical Flow");
 	
-    panel.add(pyrScale.set("pyrScale", .5, 0, 1));
     panel.add(levels.set("levels", 4, 1, 8));
     panel.add(winsize.set("winsize", 8, 4, 64));
     panel.add(iterations.set("iterations", 2, 1, 8));
@@ -19,7 +22,6 @@ void testApp::setup() {
     panel.add(polySigma.set("polySigma", 1.5, 1.1, 2));
     panel.add(OPTFLOW_FARNEBACK_GAUSSIAN.set("OPTFLOW_FARNEBACK_GAUSSIAN", false));
 	
-    panel.add(useFarneback.set("useFarneback", true));
     panel.add(winSize.set("winSize", 32, 4, 64));
     panel.add(maxLevel.set("maxLevel", 3, 0, 8));
 	
@@ -27,50 +29,47 @@ void testApp::setup() {
     panel.add(qualityLevel.set("qualityLevel", 0.01, 0.001, .02));
     panel.add(minDistance.set("minDistance", 4, 1, 16));
 
-    curFlow = &farneback;
+    farneback.setNumLevels( levels.get() );
+    farneback.setWindowSize( winsize.get() );
+    farneback.setNumIterations( iterations.get() );
+    farneback.setPolyN( polyN.get() );
+    farneback.setPolySigma( polySigma.get() );
+    farneback.setUseGaussian(OPTFLOW_FARNEBACK_GAUSSIAN.get());
     
     serial.listDevices();
     vector <ofSerialDeviceInfo> deviceList = serial.getDeviceList();
     
     int baud = 9600;
     serial.setup(0, baud);
+
+    crystals.resize(NUM_CRYSTALS);
+
+    for(int i = 0; i < NUM_CRYSTALS; i++) {
+    	crystals[i].setId(i);
+    	crystals[i].setRotation(ofRandom(0, 360));
+    	crystals[i].setSerial(&serial);
+    }
 }
 
 void testApp::update(){
     frame = cam.grab();
     if(!frame.empty()) {
 
-        if(useFarneback.get()) {
-			curFlow = &farneback;
-            farneback.setPyramidScale( pyrScale.get() );
-            farneback.setNumLevels( levels.get() );
-            farneback.setWindowSize( winsize.get() );
-            farneback.setNumIterations( iterations.get() );
-            farneback.setPolyN( polyN.get() );
-            farneback.setPolySigma( polySigma.get() );
-            farneback.setUseGaussian(OPTFLOW_FARNEBACK_GAUSSIAN.get());
-			
-		} else {
-			curFlow = &pyrLk;
-            pyrLk.setMaxFeatures( maxFeatures.get() );
-            pyrLk.setQualityLevel( qualityLevel.get() );
-            pyrLk.setMinDistance( minDistance.get() );
-            pyrLk.setWindowSize( winSize.get() );
-            pyrLk.setMaxLevel( maxLevel.get() );
-		}
-        //check it out that that you can use Flow polymorphically
-        curFlow->calcOpticalFlow(frame);
+        farneback.calcOpticalFlow(frame);
         
         ofVec2f averageFlow = farneback.getAverageFlow();
-        if(abs(averageFlow.x) > 1) {
-            if(averageFlow.x > 0) {
-                serial.writeByte('c');
-                serial.writeByte('1');
-            } else {
-                serial.writeByte('c');
-                serial.writeByte('0');
-            }
-        }//        cout<<flow.x<<endl;
+        for(int i = 0; i < crystals.size(); i++) {
+        	crystals[i].update(averageFlow.x);
+        }
+        // if(abs(averageFlow.x) > 1) {
+        //     if(averageFlow.x > 0) {
+        //         serial.writeByte('c');
+        //         serial.writeByte('1');
+        //     } else {
+        //         serial.writeByte('c');
+        //         serial.writeByte('0');
+        //     }
+        // }
 	}
 }
 

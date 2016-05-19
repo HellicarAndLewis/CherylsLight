@@ -1,27 +1,30 @@
+//RPI VERSION
+
 #pragma once
 
 #include "ofMain.h"
 #include "ofxGui.h"
 #include "ofxCv.h"
 #include "ofxCvPiCam.h"
+#include "Crystal.h"
 
 class testApp : public ofBaseApp{
 public:
 	void setup();
 	void update();
 	void draw();
+
+	vector<Crystal> crystals;
 	
     int w,h;
     ofxCvPiCam cam;
     cv::Mat frame;
 
     ofxCv::FlowFarneback farneback;
-    ofxCv::FlowPyrLK pyrLk;
 	
     ofxCv::Flow* curFlow;
 		
     ofxPanel panel;
-    ofParameter<float> pyrScale;
     ofParameter<int> levels;
     ofParameter<int> winsize;
     ofParameter<int> iterations;
@@ -29,7 +32,6 @@ public:
     ofParameter<float> polySigma;
     ofParameter<bool> OPTFLOW_FARNEBACK_GAUSSIAN;
 
-    ofParameter<bool> useFarneback;
     ofParameter<int> winSize;
     ofParameter<int> maxLevel;
 
@@ -38,6 +40,5 @@ public:
     ofParameter<int> minDistance;
     
     ofSerial serial;
-
 };
 

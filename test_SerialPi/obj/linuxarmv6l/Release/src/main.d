@@ -1,6 +1,6 @@
 obj/linuxarmv6l/Release/src/main.o: \
- /home/pi/openFrameworks/apps/CherylsLight/test_Serial/src/main.cpp \
- /home/pi/openFrameworks/apps/CherylsLight/test_Serial/src/testApp.h \
+ /home/pi/openFrameworks/apps/CherylsLight/test_SerialPi/src/main.cpp \
+ /home/pi/openFrameworks/apps/CherylsLight/test_SerialPi/src/testApp.h \
  ../../../libs/openFrameworks/ofMain.h \
  ../../../libs/openFrameworks/utils/ofConstants.h \
  /opt/vc/include/bcm_host.h \
@@ -460,9 +460,10 @@ obj/linuxarmv6l/Release/src/main.o: \
  /opt/vc/include/interface/mmal/util/mmal_util.h \
  /opt/vc/include/interface/mmal/util/mmal_util_params.h \
  /opt/vc/include/interface/mmal/util/mmal_default_components.h \
- /opt/vc/include/interface/mmal/util/mmal_connection.h
+ /opt/vc/include/interface/mmal/util/mmal_connection.h \
+ /home/pi/openFrameworks/apps/CherylsLight/test_SerialPi/src/Crystal.h
 
-/home/pi/openFrameworks/apps/CherylsLight/test_Serial/src/testApp.h:
+/home/pi/openFrameworks/apps/CherylsLight/test_SerialPi/src/testApp.h:
 
 ../../../libs/openFrameworks/ofMain.h:
 
@@ -1425,3 +1426,5 @@ obj/linuxarmv6l/Release/src/main.o: \
 /opt/vc/include/interface/mmal/util/mmal_default_components.h:
 
 /opt/vc/include/interface/mmal/util/mmal_connection.h:
+
+/home/pi/openFrameworks/apps/CherylsLight/test_SerialPi/src/Crystal.h:
