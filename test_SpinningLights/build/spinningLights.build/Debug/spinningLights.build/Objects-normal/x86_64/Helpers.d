@@ -1,10 +1,70 @@
 dependencies: \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/src/main.cpp \
-  ../../../libs/openFrameworks/ofMain.h \
+  /Users/james/Documents/openFrameworksNightly/addons/ofxCv/libs/ofxCv/src/Helpers.cpp \
+  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Helpers.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/opencv.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/cvdef.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/hal/interface.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/version.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/base.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/cvstd.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/ptr.inl.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/neon_utils.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/traits.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/matx.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/saturate.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/fast_math.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/types.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/mat.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/bufferpool.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/mat.inl.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/persistence.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/operations.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/cvstd.inl.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/utility.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/core_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/types_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/optim.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgproc.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgproc/imgproc_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgproc/types_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/photo.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/photo/photo_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/video.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/video/tracking.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/video/background_segm.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/video/tracking_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/features2d.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/flann/miniflann.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/flann/defines.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/flann/config.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/objdetect.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/objdetect/detection_based_tracker.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/objdetect/objdetect_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/calib3d.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/affine.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/calib3d/calib3d_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgcodecs.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/videoio.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/highgui.hpp \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/highgui/highgui_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgcodecs/imgcodecs_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/videoio/videoio_c.h \
+  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/ml.hpp \
+  ../../../libs/openFrameworks/math/ofVectorMath.h \
+  ../../../libs/openFrameworks/math/ofVec2f.h \
   ../../../libs/openFrameworks/utils/ofConstants.h \
   ../../../libs/glew/include/GL/glew.h \
   ../../../libs/tess2/include/tesselator.h \
   ../../../libs/json/include/json.hpp \
+  ../../../libs/openFrameworks/math/ofVec3f.h \
+  ../../../libs/openFrameworks/math/ofVec4f.h \
+  ../../../libs/openFrameworks/math/ofMatrix3x3.h \
+  ../../../libs/openFrameworks/math/ofMatrix4x4.h \
+  ../../../libs/openFrameworks/math/ofQuaternion.h \
+  ../../../libs/openFrameworks/types/ofRectangle.h \
+  ../../../libs/openFrameworks/types/ofPoint.h \
+  ../../../libs/openFrameworks/utils/ofLog.h \
   ../../../libs/openFrameworks/utils/ofFileUtils.h \
   ../../../libs/boost/include/boost/filesystem.hpp \
   ../../../libs/boost/include/boost/filesystem/config.hpp \
@@ -394,35 +454,37 @@ dependencies: \
   ../../../libs/boost/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
   ../../../libs/boost/include/boost/range/const_iterator.hpp \
   ../../../libs/boost/include/boost/filesystem/convenience.hpp \
-  ../../../libs/openFrameworks/utils/ofLog.h \
   ../../../libs/openFrameworks/types/ofTypes.h \
   ../../../libs/openFrameworks/types/ofColor.h \
   ../../../libs/openFrameworks/math/ofMath.h \
-  ../../../libs/openFrameworks/types/ofPoint.h \
-  ../../../libs/openFrameworks/math/ofVec3f.h \
-  ../../../libs/openFrameworks/math/ofVec2f.h \
-  ../../../libs/openFrameworks/math/ofVec4f.h \
-  ../../../libs/openFrameworks/utils/ofSystemUtils.h \
+  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Utilities.h \
+  ../../../libs/openFrameworks/gl/ofTexture.h \
+  ../../../libs/openFrameworks/types/ofBaseTypes.h \
   ../../../libs/openFrameworks/utils/ofURLFileLoader.h \
   ../../../libs/openFrameworks/events/ofEvents.h \
   ../../../libs/openFrameworks/events/ofEventUtils.h \
   ../../../libs/openFrameworks/events/ofEvent.h \
   ../../../libs/openFrameworks/utils/ofTimer.h \
   ../../../libs/openFrameworks/utils/ofFpsCounter.h \
+  ../../../libs/openFrameworks/3d/ofMesh.h \
   ../../../libs/openFrameworks/utils/ofUtils.h \
   ../../../libs/utf8cpp/include/utf8.h \
   ../../../libs/utf8cpp/include/utf8/checked.h \
   ../../../libs/utf8cpp/include/utf8/core.h \
   ../../../libs/utf8cpp/include/utf8/unchecked.h \
-  ../../../libs/openFrameworks/utils/ofThread.h \
-  ../../../libs/openFrameworks/utils/ofThreadChannel.h \
-  ../../../libs/openFrameworks/types/ofBaseTypes.h \
-  ../../../libs/openFrameworks/types/ofRectangle.h \
-  ../../../libs/openFrameworks/math/ofMatrix4x4.h \
-  ../../../libs/openFrameworks/math/ofQuaternion.h \
-  ../../../libs/openFrameworks/3d/ofMesh.h \
   ../../../libs/openFrameworks/gl/ofGLUtils.h \
   ../../../libs/openFrameworks/graphics/ofPixels.h \
+  ../../../libs/openFrameworks/gl/ofVboMesh.h \
+  ../../../libs/openFrameworks/gl/ofVbo.h \
+  ../../../libs/openFrameworks/gl/ofBufferObject.h \
+  ../../../libs/openFrameworks/video/ofVideoPlayer.h \
+  ../../../libs/openFrameworks/video/ofAVFoundationPlayer.h \
+  ../../../libs/openFrameworks/utils/ofThread.h \
+  ../../../libs/openFrameworks/video/ofVideoGrabber.h \
+  ../../../libs/openFrameworks/video/ofQTKitGrabber.h \
+  ../../../libs/openFrameworks/ofMain.h \
+  ../../../libs/openFrameworks/utils/ofSystemUtils.h \
+  ../../../libs/openFrameworks/utils/ofThreadChannel.h \
   ../../../libs/openFrameworks/utils/ofXml.h \
   ../../../libs/openFrameworks/types/ofParameter.h \
   ../../../libs/openFrameworks/types/ofParameterGroup.h \
@@ -484,15 +546,9 @@ dependencies: \
   ../../../libs/poco/include/Poco/DOM/NamedNodeMap.h \
   ../../../libs/poco/include/Poco/DOM/ChildNodesList.h \
   ../../../libs/poco/include/Poco/DOM/NodeList.h \
-  ../../../libs/openFrameworks/math/ofVectorMath.h \
-  ../../../libs/openFrameworks/math/ofMatrix3x3.h \
   ../../../libs/openFrameworks/communication/ofSerial.h \
   ../../../libs/openFrameworks/communication/ofArduino.h \
   ../../../libs/openFrameworks/gl/ofFbo.h \
-  ../../../libs/openFrameworks/gl/ofTexture.h \
-  ../../../libs/openFrameworks/gl/ofVboMesh.h \
-  ../../../libs/openFrameworks/gl/ofVbo.h \
-  ../../../libs/openFrameworks/gl/ofBufferObject.h \
   ../../../libs/openFrameworks/gl/ofGLRenderer.h \
   ../../../libs/openFrameworks/graphics/ofPolyline.h \
   ../../../libs/openFrameworks/graphics/of3dGraphics.h \
@@ -537,87 +593,5 @@ dependencies: \
   ../../../libs/fmodex/include/fmod_memoryinfo.h \
   ../../../libs/fmodex/include/fmod_errors.h \
   ../../../libs/openFrameworks/sound/ofSoundBuffer.h \
-  ../../../libs/openFrameworks/video/ofVideoGrabber.h \
-  ../../../libs/openFrameworks/video/ofQTKitGrabber.h \
-  ../../../libs/openFrameworks/video/ofVideoPlayer.h \
-  ../../../libs/openFrameworks/video/ofAVFoundationPlayer.h \
   ../../../libs/openFrameworks/3d/ofCamera.h \
-  ../../../libs/openFrameworks/3d/ofEasyCam.h \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/src/ofApp.h \
-  /Users/james/Documents/openFrameworksNightly/addons/ofxGui/src/ofxGui.h \
-  ../../../addons/ofxGui/src/ofxToggle.h \
-  ../../../addons/ofxGui/src/ofxBaseGui.h \
-  ../../../addons/ofxGui/src/ofxSlider.h \
-  ../../../addons/ofxGui/src/ofxSliderGroup.h \
-  ../../../addons/ofxGui/src/ofxGuiGroup.h \
-  ../../../addons/ofxGui/src/ofxButton.h \
-  ../../../addons/ofxGui/src/ofxPanel.h \
-  ../../../addons/ofxGui/src/ofxLabel.h \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/src/Crystal.hpp \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/src/Light.hpp \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/../../../addons/ofxCv/src/ofxCv.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/opencv.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/cvdef.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/hal/interface.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/version.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/base.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/cvstd.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/ptr.inl.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/neon_utils.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/traits.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/matx.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/saturate.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/fast_math.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/types.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/mat.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/bufferpool.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/mat.inl.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/persistence.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/operations.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/cvstd.inl.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/utility.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/core_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/types_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/optim.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgproc.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgproc/imgproc_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgproc/types_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/photo.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/photo/photo_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/video.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/video/tracking.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/video/background_segm.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/video/tracking_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/features2d.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/flann/miniflann.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/flann/defines.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/flann/config.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/objdetect.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/objdetect/detection_based_tracker.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/objdetect/objdetect_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/calib3d.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/core/affine.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/calib3d/calib3d_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgcodecs.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/videoio.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/highgui.hpp \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/highgui/highgui_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/imgcodecs/imgcodecs_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/videoio/videoio_c.h \
-  ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/include/opencv2/ml.hpp \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Utilities.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Wrappers.h \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/../../../addons/ofxCv/libs/CLD/include/CLD/imatrix.h \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/../../../addons/ofxCv/libs/CLD/include/CLD/ETF.h \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/../../../addons/ofxCv/libs/CLD/include/CLD/fdog.h \
-  /Users/james/Documents/openFrameworksNightly/apps/CherylsLight/test_SpinningLights/../../../addons/ofxCv/libs/CLD/include/CLD/myvec.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Helpers.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Distance.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Calibration.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Tracker.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/ContourFinder.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/RunningBackground.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Flow.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/ObjectFinder.h \
-  ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/Kalman.h
+  ../../../libs/openFrameworks/3d/ofEasyCam.h

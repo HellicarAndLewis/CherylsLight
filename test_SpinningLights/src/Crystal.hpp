@@ -24,12 +24,14 @@ public:
     void setSpeed(float _speed) { speed = _speed; };
     void setRotation(float _rotation) { rotation = _rotation; };
     void setLight(Light* _light) { light = _light; };
+    void setInitialSpeed(float _speed) { initialSpeed = _speed; };
     
     //Getters
     ofVec2f getLocation() { return location; };
     float getSpeed() { return speed; };
     float getRotation() { return rotation; };
     Light* getLight() { return light; };
+    float getInitialSpeed() { return initialSpeed; };
     
     //Functionality
     void draw();
@@ -40,6 +42,7 @@ private:
     float speed;
     float rotation;
     Light* light;
+    float initialSpeed;
 };
 
 #endif /* crystal_hpp */

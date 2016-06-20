@@ -4,6 +4,7 @@
 #include "ofxGui.h"
 #include "Crystal.hpp"
 #include "Light.hpp"
+#include "ofxCv.h"
 
 #define NUM_CRYSTALS 7
 #define NUM_LIGHTS NUM_CRYSTALS
@@ -14,7 +15,8 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-
+    
+        void drawMask();
 		void keyPressed(int key);
 		void keyReleased(int key);
 		void mouseMoved(int x, int y );
@@ -32,6 +34,10 @@ class ofApp : public ofBaseApp{
     
     ofxPanel gui;
     ofParameter<float> flow;
+    
+    ofParameter<float> flowResetSpeed;
+    
+    ofImage mask;
     
     ofVec2f circleCenter = ofVec2f(ofGetWidth()/2, ofGetHeight()/2);
     float circleRadius = 300;
