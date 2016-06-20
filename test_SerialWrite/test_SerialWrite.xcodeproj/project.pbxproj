@@ -113,6 +113,7 @@
 
 /* Begin PBXFileReference section */
 		03A75A648BC4CF1D9DEDD0CE /* Flow.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Flow.cpp; path = ../../../addons/ofxCv/libs/ofxCv/src/Flow.cpp; sourceTree = SOURCE_ROOT; };
+		1425E7331D0EEC37007DD477 /* ofxIntegrator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxIntegrator.h; sourceTree = "<group>"; };
 		178547E33CE398C7B59F08AB /* ContourFinder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ContourFinder.h; path = ../../../addons/ofxCv/libs/ofxCv/include/ofxCv/ContourFinder.h; sourceTree = SOURCE_ROOT; };
 		1A9CAE951CEB20410042FCD1 /* ofxCvBlob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxCvBlob.h; sourceTree = "<group>"; };
 		1A9CAE961CEB20410042FCD1 /* ofxCvColorImage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxCvColorImage.cpp; sourceTree = "<group>"; };
@@ -501,6 +502,23 @@
 				4EB038C7DF921AA8A4070286 /* ofxCv */,
 			);
 			name = include;
+			sourceTree = "<group>";
+		};
+		1425E7311D0EEC37007DD477 /* ofxIntegrator */ = {
+			isa = PBXGroup;
+			children = (
+				1425E7321D0EEC37007DD477 /* src */,
+			);
+			name = ofxIntegrator;
+			sourceTree = "<group>";
+		};
+		1425E7321D0EEC37007DD477 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				1425E7331D0EEC37007DD477 /* ofxIntegrator.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxIntegrator/src;
 			sourceTree = "<group>";
 		};
 		1A9CAE931CEB20410042FCD1 /* ofxOpenCv */ = {
@@ -1497,6 +1515,7 @@
 				1A9CB03D1CEB20520042FCD1 /* ofxGui */,
 				1A9CB0581CEB22650042FCD1 /* ofxSerial */,
 				1A9CB0861CEB22A10042FCD1 /* ofxIO */,
+				1425E7311D0EEC37007DD477 /* ofxIntegrator */,
 			);
 			name = addons;
 			sourceTree = "<group>";

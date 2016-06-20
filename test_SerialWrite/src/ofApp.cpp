@@ -23,6 +23,7 @@ void ofApp::setup() {
     gui.add(fbPolySigma.set("fbPolySigma", 1.5, 1.1, 2));
     gui.add(fbUseGaussian.set("fbUseGaussian", false));
     gui.add(fbWinSize.set("winSize", 32, 4, 64));
+    gui.add(sleepTime.set("Sleep Duration (Millis)", 3000, 0, 3000));
 
 	curFlow = &fb;
     
@@ -51,6 +52,12 @@ void ofApp::setup() {
     {
         ofLogNotice("ofApp::setup") << "No devices connected.";
     }
+    
+    for(int i = 0; i < NUM_MOTORS; i++) {
+        motors[i] = i;
+    }
+        
+//    ofSetFrameRate(10);
     //serial.listDevices();
     
     //auto devives = serial.getDeviceList();
@@ -59,41 +66,78 @@ void ofApp::setup() {
 
 void ofApp::update(){
 	camera.update();
+
+//    Byte b[7][2];
+//    
+//    int val = 201;
+//    
+//    Byte b1 = val / 256;
+//    Byte b2 = val % 256;
+//    cout<<(int) b1<<" "<<(int)b2<<endl;
+//    for(int i = 0; i < NUM_MOTORS; i++) {
+//        b[i][0] = b1;
+//        b[i][1] = b2;
+//    }
+//    
+//    cout<<"Val Sent: "<<b1*256 + b2<<endl;
+//
+//    
+//    Byte buf[3] = {
+//       'a', b1, b2
+////        b[1][0], b[1][1],
+////        b[2][0], b[2][1],
+////        b[3][0], b[3][1],
+////        b[4][0], b[4][1],
+////        b[5][0], b[5][1],
+////        b[6][0], b[6][1]
+//    };
+    
+//    device.writeBytes(&buf[0], 3);
+//    
+//    ofSleepMillis(sleepTime);
 	
-	if(camera.isFrameNew()) {
-		
-		if(usefb) {
-			curFlow = &fb;
-			fb.setPyramidScale(fbPyrScale);
-			fb.setNumLevels(fbLevels);
-			fb.setWindowSize(fbWinSize);
-			fb.setNumIterations(fbIterations);
-			fb.setPolyN(fbPolyN);
-			fb.setPolySigma(fbPolySigma);
-            fb.setUseGaussian(fbUseGaussian);
-		} else {
-			curFlow = &lk;
-			lk.setMaxFeatures(lkMaxFeatures);
-			lk.setQualityLevel(lkQualityLevel);
-			lk.setMinDistance(lkMinDistance);
-			lk.setWindowSize(lkWinSize);
-			lk.setMaxLevel(lkMaxLevel);
-		}
-		
-		// you can use Flow polymorphically
-		curFlow->calcOpticalFlow(camera);
-        
-        ofVec2f averageFlow = fb.getAverageFlow();
-        if(abs(averageFlow.x) > 1) {
-            if(averageFlow.x > 0) {
-                device.writeByte('c');
-                device.writeByte('1');
-            } else {
-                device.writeByte('c');
-                device.writeByte('0');
-            }
-        }
-	}
+//	if(camera.isFrameNew()) {
+//		
+//		if(usefb) {
+//			curFlow = &fb;
+//			fb.setPyramidScale(fbPyrScale);
+//			fb.setNumLevels(fbLevels);
+//			fb.setWindowSize(fbWinSize);
+//			fb.setNumIterations(fbIterations);
+//			fb.setPolyN(fbPolyN);
+//			fb.setPolySigma(fbPolySigma);
+//            fb.setUseGaussian(fbUseGaussian);
+//		} else {
+//			curFlow = &lk;
+//			lk.setMaxFeatures(lkMaxFeatures);
+//			lk.setQualityLevel(lkQualityLevel);
+//			lk.setMinDistance(lkMinDistance);
+//			lk.setWindowSize(lkWinSize);
+//			lk.setMaxLevel(lkMaxLevel);
+//		}
+//		
+//		// you can use Flow polymorphically
+//		curFlow->calcOpticalFlow(camera);
+//        
+////        Byte b1 = 500 / 256;
+////        Byte b2 = (int)500 % 256;
+////        Byte buf[2] = {b1, b2};
+////        device.writeBytes(&buf[0], 2);
+////        cout<<"Flow Sent: "<<b1*256 + b2<<endl;
+//        
+//        ofVec2f averageFlow = fb.getAverageFlow();
+//        int averageXFlow = (int)(ofMap(averageFlow.x, -3, 3, 0, 1000, true));
+//        Byte b1 = averageXFlow / 256;
+//        Byte b2 = (int)averageXFlow % 256;
+//        Byte buf[2] = {b1, b2};
+//         if(abs(averageFlow.x) > 1) {
+//             device.writeBytes(&buf[0], 2);
+//             cout<<"Flow Sent: "<<b1*256 + b2<<endl;
+//         } else {
+////             device.writeBytes(&buf[0], 2);
+//             cout<<"Flow UnSent: "<<b1*256 + b2<<endl;
+//         }
+//	}
 }
 
 void ofApp::draw(){
@@ -104,4 +148,23 @@ void ofApp::draw(){
     ofDrawBitmapStringHighlight(ofToString((int) ofGetFrameRate()) + "fps", 10, 20);
     ofPopMatrix();
     gui.draw();
+}
+
+void ofApp::keyPressed(int key) {
+    //device.writeByte('k');
+    if(key == OF_KEY_RIGHT) {
+        Byte b1 =  1000 / 256;
+        Byte b2 = (int)1000 % 256;
+        Byte buf[2] = {b1, b2};
+        device.writeBytes(&buf[0], 2);
+//        device.writeBytes(&buf[0], 2);
+        cout<<"Flow Sent: "<<b1*256 + b2<<endl;
+    } else if(key == OF_KEY_LEFT) {
+        Byte b1 =  (0 / 256);
+        Byte b2 = (int)(0 % 256);
+        Byte buf[2] = {b1, b2};
+        device.writeBytes(&buf[0], 2);
+//        device.writeBytes(&buf[0], 2);
+        cout<<"Flow Sent: "<<b1*256 + b2<<endl;
+    }
 }
