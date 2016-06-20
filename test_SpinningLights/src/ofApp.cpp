@@ -16,7 +16,6 @@ void ofApp::setup(){
         crystals[i].setLight(&lights[i]);
         lights[i].setCrystal(&crystals[i]);
     }
-    
     gui.setup();
 }
 

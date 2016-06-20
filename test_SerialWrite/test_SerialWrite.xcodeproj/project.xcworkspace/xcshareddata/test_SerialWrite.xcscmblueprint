@@ -8,6 +8,7 @@
     "2DE9C8846D9375EAACFABA8963120E8E7719BAF5" : 0,
     "FE226E83D8BF0C809944842B1EAA86B2B03D27C2" : 0,
     "37526DA425E5430474A14FBFA1BC4525160B5FC1" : 0,
+    "DEAB1253E39C92BC9D4B3A840A3D93E92AEF2145" : 0,
     "363F03AFEA2D7EEAB79476A26426EA95A67F33F2" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BCE7ADD3-8249-4D76-827E-39B2E81469D7",
@@ -16,6 +17,7 @@
     "2DE9C8846D9375EAACFABA8963120E8E7719BAF5" : "..",
     "FE226E83D8BF0C809944842B1EAA86B2B03D27C2" : "CherylsLight\/",
     "37526DA425E5430474A14FBFA1BC4525160B5FC1" : "..\/addons\/ofxCv",
+    "DEAB1253E39C92BC9D4B3A840A3D93E92AEF2145" : "..\/addons\/ofxIntegrator",
     "363F03AFEA2D7EEAB79476A26426EA95A67F33F2" : "..\/addons\/ofxSerial"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "test_SerialWrite",
@@ -41,6 +43,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bakercp\/ofxIO",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CA29DB320F881B85D76220FC5498A4D1FA4F037C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Bentleyj\/ofxIntegrator",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DEAB1253E39C92BC9D4B3A840A3D93E92AEF2145"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/HellicarAndLewis\/CherylsLight",
