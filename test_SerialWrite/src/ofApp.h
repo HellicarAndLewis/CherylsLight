@@ -24,12 +24,15 @@ public:
 	
 	ofxCv::Flow* curFlow;
     
+    const char startOfNumberDelimiter = '<';
+    const char endOfNumberDelimiter   = '>';
 		
     ofxPanel gui;
     ofParameter<float> fbPyrScale, lkQualityLevel, fbPolySigma;
     ofParameter<int> fbLevels, lkWinSize, fbIterations, fbPolyN, fbWinSize, lkMaxLevel, lkMaxFeatures, lkMinDistance;
     ofParameter<bool> fbUseGaussian, usefb;
     ofParameter<int> sleepTime;
+    float timeOfLastMessage;
     
     ofx::IO::SerialDevice device;
     

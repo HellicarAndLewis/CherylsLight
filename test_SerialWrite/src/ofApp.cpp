@@ -23,7 +23,7 @@ void ofApp::setup() {
     gui.add(fbPolySigma.set("fbPolySigma", 1.5, 1.1, 2));
     gui.add(fbUseGaussian.set("fbUseGaussian", false));
     gui.add(fbWinSize.set("winSize", 32, 4, 64));
-    gui.add(sleepTime.set("Sleep Duration (Millis)", 3000, 0, 3000));
+    gui.add(sleepTime.set("Sleep Time", 3000, 50, 3000));
 
 	curFlow = &fb;
     
@@ -37,7 +37,7 @@ void ofApp::setup() {
     if (!devicesInfo.empty())
     {
         // Connect to the first matching device.
-        bool success = device.setup(devicesInfo[0], 9600);
+        bool success = device.setup(devicesInfo[0], 115200);
         
         if(success)
         {
@@ -56,6 +56,8 @@ void ofApp::setup() {
     for(int i = 0; i < NUM_MOTORS; i++) {
         motors[i] = i;
     }
+    
+    timeOfLastMessage = 0.0;
         
 //    ofSetFrameRate(10);
     //serial.listDevices();
@@ -65,37 +67,54 @@ void ofApp::setup() {
 }
 
 void ofApp::update(){
-	camera.update();
-
-//    Byte b[7][2];
-//    
-//    int val = 201;
-//    
-//    Byte b1 = val / 256;
-//    Byte b2 = val % 256;
-//    cout<<(int) b1<<" "<<(int)b2<<endl;
-//    for(int i = 0; i < NUM_MOTORS; i++) {
-//        b[i][0] = b1;
-//        b[i][1] = b2;
-//    }
-//    
-//    cout<<"Val Sent: "<<b1*256 + b2<<endl;
-//
-//    
-//    Byte buf[3] = {
-//       'a', b1, b2
-////        b[1][0], b[1][1],
-////        b[2][0], b[2][1],
-////        b[3][0], b[3][1],
-////        b[4][0], b[4][1],
-////        b[5][0], b[5][1],
-////        b[6][0], b[6][1]
-//    };
     
-//    device.writeBytes(&buf[0], 3);
+    float time = ofGetElapsedTimeMillis();
+    if(time - timeOfLastMessage > sleepTime) {
+        Byte buff [3];
+        
+        int val = 258;
+
+        Byte b1 = val / 256;
+        Byte b2 = val % 256;
+        
+        buff[0] = startOfNumberDelimiter;
+        buff[1] = b2;
+        buff[2] = endOfNumberDelimiter;
+        
+        device.writeBytes(&buff[0], 3);
+        timeOfLastMessage = time;
+    }
+
+    //    device.writeBytes("Test");
+//    device.writeBytes(startOfNumberDelimiter + 't' + endOfNumberDelimiter);
+//    for (int i = 0; i < 10; i++)
+//    {
+//        Serial.print (startOfNumberDelimiter);
+//        Serial.print (rand ());    // send the number
+//        Serial.print (endOfNumberDelimiter);
+//        Serial.println ();
+//    }  // end of for
 //    
-//    ofSleepMillis(sleepTime);
+//    delay (5000);
+    
+//    float time = ofGetElapsedTimeMillis();
+//    if(time - timeOfLastMessage > sleepTime) {
+//        camera.update();
+//        
+//        int val = 201;
+//        
+//        Byte b1 = val / 256;
+//        Byte b2 = val % 256;
+//
+//        Byte buf[2] = {
+//            b1, b2
+//        };
+//        
+//        device.writeBytes(&buf[0], 2);
+//        timeOfLastMessage = time;
+//    }
 	
+//
 //	if(camera.isFrameNew()) {
 //		
 //		if(usefb) {
