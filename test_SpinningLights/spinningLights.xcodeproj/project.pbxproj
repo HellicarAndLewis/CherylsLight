@@ -9,20 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A917E6B1CE090CF00735AAC /* Crystal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A917E691CE090CF00735AAC /* Crystal.cpp */; };
 		1A917E6E1CE0956E00735AAC /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A917E6C1CE0956E00735AAC /* Light.cpp */; };
-		1A9CB1231CEB74A30042FCD1 /* ETF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB1051CEB74A30042FCD1 /* ETF.cpp */; };
-		1A9CB1241CEB74A30042FCD1 /* fdog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB1061CEB74A30042FCD1 /* fdog.cpp */; };
-		1A9CB1251CEB74A30042FCD1 /* Calibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB1171CEB74A30042FCD1 /* Calibration.cpp */; };
-		1A9CB1261CEB74A30042FCD1 /* ContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB1181CEB74A30042FCD1 /* ContourFinder.cpp */; };
-		1A9CB1271CEB74A30042FCD1 /* Distance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB1191CEB74A30042FCD1 /* Distance.cpp */; };
-		1A9CB1281CEB74A30042FCD1 /* Flow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB11A1CEB74A30042FCD1 /* Flow.cpp */; };
-		1A9CB1291CEB74A30042FCD1 /* Helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB11B1CEB74A30042FCD1 /* Helpers.cpp */; };
-		1A9CB12A1CEB74A30042FCD1 /* Kalman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB11C1CEB74A30042FCD1 /* Kalman.cpp */; };
-		1A9CB12B1CEB74A30042FCD1 /* ObjectFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB11D1CEB74A30042FCD1 /* ObjectFinder.cpp */; };
-		1A9CB12C1CEB74A30042FCD1 /* RunningBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB11E1CEB74A30042FCD1 /* RunningBackground.cpp */; };
-		1A9CB12D1CEB74A30042FCD1 /* Tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB11F1CEB74A30042FCD1 /* Tracker.cpp */; };
-		1A9CB12E1CEB74A30042FCD1 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB1201CEB74A30042FCD1 /* Utilities.cpp */; };
-		1A9CB12F1CEB74A30042FCD1 /* Wrappers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CB1211CEB74A30042FCD1 /* Wrappers.cpp */; };
-		1A9CB1301CEB74A30042FCD1 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9CB1221CEB74A30042FCD1 /* opencv.a */; };
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
@@ -73,39 +59,6 @@
 		1A917E6A1CE090CF00735AAC /* Crystal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Crystal.hpp; sourceTree = "<group>"; };
 		1A917E6C1CE0956E00735AAC /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
 		1A917E6D1CE0956E00735AAC /* Light.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
-		1A9CB0F91CEB74A30042FCD1 /* ofxCv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxCv.h; sourceTree = "<group>"; };
-		1A9CB0FB1CEB74A30042FCD1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		1A9CB0FD1CEB74A30042FCD1 /* addons.make */ = {isa = PBXFileReference; lastKnownFileType = text; path = addons.make; sourceTree = "<group>"; };
-		1A9CB1001CEB74A30042FCD1 /* ETF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETF.h; sourceTree = "<group>"; };
-		1A9CB1011CEB74A30042FCD1 /* fdog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fdog.h; sourceTree = "<group>"; };
-		1A9CB1021CEB74A30042FCD1 /* imatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imatrix.h; sourceTree = "<group>"; };
-		1A9CB1031CEB74A30042FCD1 /* myvec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myvec.h; sourceTree = "<group>"; };
-		1A9CB1051CEB74A30042FCD1 /* ETF.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ETF.cpp; sourceTree = "<group>"; };
-		1A9CB1061CEB74A30042FCD1 /* fdog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fdog.cpp; sourceTree = "<group>"; };
-		1A9CB1081CEB74A30042FCD1 /* addons.make */ = {isa = PBXFileReference; lastKnownFileType = text; path = addons.make; sourceTree = "<group>"; };
-		1A9CB10B1CEB74A30042FCD1 /* Calibration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calibration.h; sourceTree = "<group>"; };
-		1A9CB10C1CEB74A30042FCD1 /* ContourFinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContourFinder.h; sourceTree = "<group>"; };
-		1A9CB10D1CEB74A30042FCD1 /* Distance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Distance.h; sourceTree = "<group>"; };
-		1A9CB10E1CEB74A30042FCD1 /* Flow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flow.h; sourceTree = "<group>"; };
-		1A9CB10F1CEB74A30042FCD1 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
-		1A9CB1101CEB74A30042FCD1 /* Kalman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kalman.h; sourceTree = "<group>"; };
-		1A9CB1111CEB74A30042FCD1 /* ObjectFinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectFinder.h; sourceTree = "<group>"; };
-		1A9CB1121CEB74A30042FCD1 /* RunningBackground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunningBackground.h; sourceTree = "<group>"; };
-		1A9CB1131CEB74A30042FCD1 /* Tracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
-		1A9CB1141CEB74A30042FCD1 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		1A9CB1151CEB74A30042FCD1 /* Wrappers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wrappers.h; sourceTree = "<group>"; };
-		1A9CB1171CEB74A30042FCD1 /* Calibration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Calibration.cpp; sourceTree = "<group>"; };
-		1A9CB1181CEB74A30042FCD1 /* ContourFinder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ContourFinder.cpp; sourceTree = "<group>"; };
-		1A9CB1191CEB74A30042FCD1 /* Distance.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Distance.cpp; sourceTree = "<group>"; };
-		1A9CB11A1CEB74A30042FCD1 /* Flow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Flow.cpp; sourceTree = "<group>"; };
-		1A9CB11B1CEB74A30042FCD1 /* Helpers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Helpers.cpp; sourceTree = "<group>"; };
-		1A9CB11C1CEB74A30042FCD1 /* Kalman.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Kalman.cpp; sourceTree = "<group>"; };
-		1A9CB11D1CEB74A30042FCD1 /* ObjectFinder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectFinder.cpp; sourceTree = "<group>"; };
-		1A9CB11E1CEB74A30042FCD1 /* RunningBackground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RunningBackground.cpp; sourceTree = "<group>"; };
-		1A9CB11F1CEB74A30042FCD1 /* Tracker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cpp; sourceTree = "<group>"; };
-		1A9CB1201CEB74A30042FCD1 /* Utilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
-		1A9CB1211CEB74A30042FCD1 /* Wrappers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Wrappers.cpp; sourceTree = "<group>"; };
-		1A9CB1221CEB74A30042FCD1 /* opencv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = opencv.a; path = ../../../addons/ofxCv/../ofxOpenCv/libs/opencv/lib/osx/opencv.a; sourceTree = "<group>"; };
 		1C0DA2561397A7DE0246858B /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGuiGroup.h; path = ../../../addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
 		2834D88A62CD23F3DE2C47D1 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxButton.h; path = ../../../addons/ofxGui/src/ofxButton.h; sourceTree = SOURCE_ROOT; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
@@ -135,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A9CB1301CEB74A30042FCD1 /* opencv.a in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,128 +95,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A9CB0F71CEB74A30042FCD1 /* ofxCv */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB0F81CEB74A30042FCD1 /* src */,
-				1A9CB0FA1CEB74A30042FCD1 /* libs */,
-				1A9CB1221CEB74A30042FCD1 /* opencv.a */,
-			);
-			name = ofxCv;
-			sourceTree = "<group>";
-		};
-		1A9CB0F81CEB74A30042FCD1 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB0F91CEB74A30042FCD1 /* ofxCv.h */,
-			);
-			name = src;
-			path = ../../../addons/ofxCv/src;
-			sourceTree = "<group>";
-		};
-		1A9CB0FA1CEB74A30042FCD1 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB0FB1CEB74A30042FCD1 /* .gitignore */,
-				1A9CB0FC1CEB74A30042FCD1 /* CLD */,
-				1A9CB1071CEB74A30042FCD1 /* ofxCv */,
-			);
-			name = libs;
-			path = ../../../addons/ofxCv/libs;
-			sourceTree = "<group>";
-		};
-		1A9CB0FC1CEB74A30042FCD1 /* CLD */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB0FD1CEB74A30042FCD1 /* addons.make */,
-				1A9CB0FE1CEB74A30042FCD1 /* include */,
-				1A9CB1041CEB74A30042FCD1 /* src */,
-			);
-			path = CLD;
-			sourceTree = "<group>";
-		};
-		1A9CB0FE1CEB74A30042FCD1 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB0FF1CEB74A30042FCD1 /* CLD */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		1A9CB0FF1CEB74A30042FCD1 /* CLD */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB1001CEB74A30042FCD1 /* ETF.h */,
-				1A9CB1011CEB74A30042FCD1 /* fdog.h */,
-				1A9CB1021CEB74A30042FCD1 /* imatrix.h */,
-				1A9CB1031CEB74A30042FCD1 /* myvec.h */,
-			);
-			path = CLD;
-			sourceTree = "<group>";
-		};
-		1A9CB1041CEB74A30042FCD1 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB1051CEB74A30042FCD1 /* ETF.cpp */,
-				1A9CB1061CEB74A30042FCD1 /* fdog.cpp */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		1A9CB1071CEB74A30042FCD1 /* ofxCv */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB1081CEB74A30042FCD1 /* addons.make */,
-				1A9CB1091CEB74A30042FCD1 /* include */,
-				1A9CB1161CEB74A30042FCD1 /* src */,
-			);
-			path = ofxCv;
-			sourceTree = "<group>";
-		};
-		1A9CB1091CEB74A30042FCD1 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB10A1CEB74A30042FCD1 /* ofxCv */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		1A9CB10A1CEB74A30042FCD1 /* ofxCv */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB10B1CEB74A30042FCD1 /* Calibration.h */,
-				1A9CB10C1CEB74A30042FCD1 /* ContourFinder.h */,
-				1A9CB10D1CEB74A30042FCD1 /* Distance.h */,
-				1A9CB10E1CEB74A30042FCD1 /* Flow.h */,
-				1A9CB10F1CEB74A30042FCD1 /* Helpers.h */,
-				1A9CB1101CEB74A30042FCD1 /* Kalman.h */,
-				1A9CB1111CEB74A30042FCD1 /* ObjectFinder.h */,
-				1A9CB1121CEB74A30042FCD1 /* RunningBackground.h */,
-				1A9CB1131CEB74A30042FCD1 /* Tracker.h */,
-				1A9CB1141CEB74A30042FCD1 /* Utilities.h */,
-				1A9CB1151CEB74A30042FCD1 /* Wrappers.h */,
-			);
-			path = ofxCv;
-			sourceTree = "<group>";
-		};
-		1A9CB1161CEB74A30042FCD1 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				1A9CB1171CEB74A30042FCD1 /* Calibration.cpp */,
-				1A9CB1181CEB74A30042FCD1 /* ContourFinder.cpp */,
-				1A9CB1191CEB74A30042FCD1 /* Distance.cpp */,
-				1A9CB11A1CEB74A30042FCD1 /* Flow.cpp */,
-				1A9CB11B1CEB74A30042FCD1 /* Helpers.cpp */,
-				1A9CB11C1CEB74A30042FCD1 /* Kalman.cpp */,
-				1A9CB11D1CEB74A30042FCD1 /* ObjectFinder.cpp */,
-				1A9CB11E1CEB74A30042FCD1 /* RunningBackground.cpp */,
-				1A9CB11F1CEB74A30042FCD1 /* Tracker.cpp */,
-				1A9CB1201CEB74A30042FCD1 /* Utilities.cpp */,
-				1A9CB1211CEB74A30042FCD1 /* Wrappers.cpp */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		480A780D8D0308AE4A368801 /* ofxGui */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				480A780D8D0308AE4A368801 /* ofxGui */,
-				1A9CB0F71CEB74A30042FCD1 /* ofxCv */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -458,29 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A9CB12B1CEB74A30042FCD1 /* ObjectFinder.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
-				1A9CB12E1CEB74A30042FCD1 /* Utilities.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				1A9CB12F1CEB74A30042FCD1 /* Wrappers.cpp in Sources */,
 				1A917E6B1CE090CF00735AAC /* Crystal.cpp in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
-				1A9CB1291CEB74A30042FCD1 /* Helpers.cpp in Sources */,
-				1A9CB1261CEB74A30042FCD1 /* ContourFinder.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
-				1A9CB12C1CEB74A30042FCD1 /* RunningBackground.cpp in Sources */,
 				1A917E6E1CE0956E00735AAC /* Light.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
-				1A9CB1281CEB74A30042FCD1 /* Flow.cpp in Sources */,
-				1A9CB1251CEB74A30042FCD1 /* Calibration.cpp in Sources */,
-				1A9CB1271CEB74A30042FCD1 /* Distance.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
-				1A9CB1231CEB74A30042FCD1 /* ETF.cpp in Sources */,
-				1A9CB12A1CEB74A30042FCD1 /* Kalman.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
-				1A9CB1241CEB74A30042FCD1 /* fdog.cpp in Sources */,
-				1A9CB12D1CEB74A30042FCD1 /* Tracker.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 			);
