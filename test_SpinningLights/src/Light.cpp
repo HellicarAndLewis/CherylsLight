@@ -8,8 +8,8 @@
 //
 //
 
-#include "Light.hpp"
-#include "Crystal.hpp"
+#include "Light.h"
+#include "Crystal.h"
 
 Light::Light() {
     location = ofVec2f(0, 0);
@@ -37,6 +37,8 @@ void Light::draw() {
     } else {
         ofDrawLine(location.x, location.y, lookAt.x, lookAt.y);
     }
+    
+    ofDrawBitmapString( ofToString(index), location.x, location.y);
 
     ofTranslate(location.x, location.y);
     ofRotate(angle, 0, 0, 1);

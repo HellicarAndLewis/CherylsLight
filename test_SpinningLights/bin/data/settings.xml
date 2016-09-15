@@ -1,0 +1,7 @@
+<settings>
+	<Optical_Flow>2.62081</Optical_Flow>
+	<Flow_Down_Speed>0.008425</Flow_Down_Speed>
+	<Flow_Up_Speed>1</Flow_Up_Speed>
+	<Flow_Effect>1</Flow_Effect>
+	<Propagation_Factor>0.78</Propagation_Factor>
+</settings>

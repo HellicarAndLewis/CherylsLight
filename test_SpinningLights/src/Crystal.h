@@ -7,8 +7,8 @@
 //
 //
 
-#ifndef Crystal_hpp
-#define Crystal_hpp
+#ifndef Crystal_h
+#define Crystal_h
 
 #include "ofMain.h"
 

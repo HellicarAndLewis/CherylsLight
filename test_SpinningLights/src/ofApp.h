@@ -2,12 +2,16 @@
 
 #include "ofMain.h"
 #include "ofxGui.h"
-#include "Crystal.hpp"
-#include "Light.hpp"
-//#include "ofxCv.h"
+#include "Crystal.h"
+#include "Light.h"
+#include "ofxCv.h"
 
 #define NUM_CRYSTALS 7
 #define NUM_LIGHTS NUM_CRYSTALS
+
+//#define PROP_WEIGHTED_LERP
+#define PROP_DELAY
+//#define PROP_LOCATION
 
 class ofApp : public ofBaseApp{
 
@@ -29,13 +33,28 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
+        void propagateImpulse(float flow);
+    
     Crystal crystals[NUM_CRYSTALS];
     Light lights[NUM_LIGHTS];
     
     ofxPanel gui;
     ofParameter<float> flow;
-    ofParameter<float> flowResetSpeed;
+    ofParameter<float> flowDownSpeed;
+    ofParameter<float> flowUpSpeed;
     ofParameter<float> flowEffect;
+    ofParameter<float> propagationFactor;
+
+    ofxCv::FlowFarneback flowFb;
+    
+    ofVideoGrabber camera;
+    
+#ifdef PROP_DELAY
+    deque<float> flowHistory;
+#endif
+#ifdef PROP_LOCATION
+    float flowsFromLeftToRight[NUM_CRYSTALS];
+#endif
     
     ofShader circleMask;
     

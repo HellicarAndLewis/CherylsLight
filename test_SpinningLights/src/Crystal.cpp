@@ -6,8 +6,8 @@
 //
 //
 
-#include "Crystal.hpp"
-#include "Light.hpp"
+#include "Crystal.h"
+#include "Light.h"
 
 
 Crystal::Crystal() {

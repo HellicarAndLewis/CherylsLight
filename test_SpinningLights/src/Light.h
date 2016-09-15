@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef Light_hpp
-#define Light_hpp
+#ifndef Light_h
+#define Light_h
 
 #include "ofMain.h"
 
@@ -22,6 +22,7 @@ public:
     void setLocation(ofVec2f _location) { location = _location; };
     void setLookAt(ofVec2f _lookAt) { lookAt = _lookAt; };
     void setCrystal(Crystal* _crystal) { crystal = _crystal; };
+    void setIndex(int _index) { index = _index; };
     
     //Getters
     ofVec2f getLocation() { return location; };
@@ -35,6 +36,7 @@ private:
     ofVec2f location;
     ofVec2f lookAt;
     Crystal* crystal;
+    int index;
     
     //Functionality
     bool isCollinear(ofVec2f point);
