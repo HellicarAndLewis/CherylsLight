@@ -4,7 +4,7 @@
 #include "ofxGui.h"
 #include "Crystal.hpp"
 #include "Light.hpp"
-//#include "ofxCv.h"
+#include "ofxCv.h"
 
 #define NUM_CRYSTALS 7
 #define NUM_LIGHTS NUM_CRYSTALS
