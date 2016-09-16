@@ -14,12 +14,15 @@
 Light::Light() {
     location = ofVec2f(0, 0);
     lookAt = ofVec2f(0, 0);
+    brightness = 10.0f;
 }
 
 
 void Light::draw() {
     ofPushMatrix();
     ofPushStyle();
+    ofSetColor(255);
+    ofDrawCircle(location.x, location.y, brightness);
     ofSetColor(0);
     ofNoFill();
     ofSetRectMode(OF_RECTMODE_CENTER);
@@ -43,7 +46,6 @@ void Light::draw() {
     ofTranslate(location.x, location.y);
     ofRotate(angle, 0, 0, 1);
     ofDrawRectangle(0, 0, 30, 20);
-    
     
     ofPopStyle();
     ofPopMatrix();

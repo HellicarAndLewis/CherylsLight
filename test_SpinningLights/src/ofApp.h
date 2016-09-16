@@ -50,6 +50,8 @@ class ofApp : public ofBaseApp{
 
     ofxCv::FlowFarneback flowFb;
     int w, h;
+    float lightNoise;
+    float lightNoiseStep;
 #ifdef __linux
     ofxCvPiCam camera;
 #else

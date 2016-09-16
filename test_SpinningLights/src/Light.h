@@ -23,6 +23,7 @@ public:
     void setLookAt(ofVec2f _lookAt) { lookAt = _lookAt; };
     void setCrystal(Crystal* _crystal) { crystal = _crystal; };
     void setIndex(int _index) { index = _index; };
+    void setBrightness(float _brightness) { brightness = _brightness; };
     
     //Getters
     ofVec2f getLocation() { return location; };
@@ -37,6 +38,8 @@ private:
     ofVec2f lookAt;
     Crystal* crystal;
     int index;
+    
+    float brightness;
     
     //Functionality
     bool isCollinear(ofVec2f point);

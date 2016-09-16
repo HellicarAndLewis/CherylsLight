@@ -62,6 +62,9 @@ camera.setup(w, h, false);
         flowsFromLeftToRight[i] = 0.0f;
     }
 #endif
+    
+    lightNoise = 0.0f;
+    lightNoiseStep = 0.001f;
 
 }
 
@@ -69,8 +72,10 @@ camera.setup(w, h, false);
 void ofApp::update(){
     for(int i = 0; i < NUM_CRYSTALS; i++) {
         crystals[i].update();
+        lights[i].setBrightness(ofNoise(lightNoise + 0.5*i) * (50.0f + abs(crystals[i].getSpeed()) * 10.0f));
         //crystals[i].setSpeed(ofLerp(crystals[i].getSpeed(), crystals[i].getInitialSpeed() + flow * flowEffect, 0.1));
     }
+    lightNoise += lightNoiseStep;
     propagateImpulse(flow);
     //flow = ofLerp(flow, 0.0, flowResetSpeed);
     
