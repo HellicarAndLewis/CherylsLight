@@ -5,13 +5,15 @@
 #include "Crystal.h"
 #include "Light.h"
 #include "ofxCv.h"
-
+#ifdef __linux
+#include "ofxCvPiCam.h"
+#endif
 #define NUM_CRYSTALS 7
 #define NUM_LIGHTS NUM_CRYSTALS
 
 //#define PROP_WEIGHTED_LERP
-#define PROP_DELAY
-//#define PROP_LOCATION
+//#define PROP_DELAY
+#define PROP_LOCATION
 
 class ofApp : public ofBaseApp{
 
@@ -44,10 +46,17 @@ class ofApp : public ofBaseApp{
     ofParameter<float> flowUpSpeed;
     ofParameter<float> flowEffect;
     ofParameter<float> propagationFactor;
+    ofParameter<float> dimFac;
 
     ofxCv::FlowFarneback flowFb;
-    
+    int w, h;
+#ifdef __linux
+    ofxCvPiCam camera;
+    cv::Mat frame;
+    cv::Mat smallFrame;
+#else
     ofVideoGrabber camera;
+#endif
     
 #ifdef PROP_DELAY
     deque<float> flowHistory;

@@ -21,7 +21,9 @@ public:
     
     //Setters
     void setLocation(ofVec2f _location) { location = _location; };
-    void setSpeed(float _speed) { speed = _speed; };
+    void setSpeed(float _speed) {
+        speed = (_speed > maxSpeed) ? maxSpeed : _speed;
+    };
     void setRotation(float _rotation) { rotation = _rotation; };
     void setLight(Light* _light) { light = _light; };
     void setInitialSpeed(float _speed) { initialSpeed = _speed; };
@@ -43,6 +45,7 @@ private:
     float rotation;
     Light* light;
     float initialSpeed;
+    float maxSpeed;
 };
 
 #endif /* crystal_hpp */

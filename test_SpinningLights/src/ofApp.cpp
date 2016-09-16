@@ -4,6 +4,9 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
+    w = 160;
+    h = 120;
+    
     float theta = 90;
     for(int i = 0; i < NUM_CRYSTALS; i++) {
         
@@ -26,6 +29,7 @@ void ofApp::setup(){
     gui.add(flowDownSpeed.set("Flow Down Speed", 0.001, 0.001, 0.1));
     gui.add(flowUpSpeed.set("Flow Up Speed", 0.1, 0.1, 1.0));
     gui.add(flowEffect.set("Flow Effect", 0.5, 0.0, 1.0));
+    gui.add(dimFac.set("Dim Factor", 0.5, 0.1, 1.0));
 #ifdef PROP_WEIGHTED_LERP
     gui.add(propagationFactor.set("Propagation Factor", 0.1, 0.5, 1.0));
 #endif
@@ -33,8 +37,11 @@ void ofApp::setup(){
     gui.loadFromFile("settings.xml");
     
     flow.set("Optical Flow", 0.0, -3.0, 3.0);
-    
-    camera.setup(320, 240);
+    #ifdef __linux
+camera.setup(w, h, false);
+#else
+    camera.setup(w, h);
+#endif
     
     circleMask.load("shaders/mask.vert", "shaders/mask.frag");
     
@@ -67,15 +74,22 @@ void ofApp::update(){
     propagateImpulse(flow);
     //flow = ofLerp(flow, 0.0, flowResetSpeed);
     
+#ifdef __linux
+    frame = camera.grab();
+    if(!frame.empty()) {
+        resize(frame, smallFrame, cv::Size(round(dimFac*frame.cols), round(dimFac*frame.rows)));
+        flowFb.calcOpticalFlow(smallFrame);
+#else
     camera.update();
     if(camera.isFrameNew()) {
         flowFb.calcOpticalFlow(camera);
+#endif
 #ifdef PROP_LOCATION
         for(int i = 0; i < NUM_CRYSTALS; i++) {
-            float width = camera.getWidth() / NUM_CRYSTALS;
+            float width = smallFrame.cols / NUM_CRYSTALS;
             float x = i * width;
-            if(abs(flowFb.getAverageFlowInRegion(ofRectangle(x, 0, width, 240)).x) > abs(flowsFromLeftToRight[i])) {
-                flowsFromLeftToRight[i] = ofLerp(flowsFromLeftToRight[i], flowFb.getAverageFlowInRegion(ofRectangle(x, 0, width, 240)).x, flowUpSpeed);
+            if(abs(flowFb.getAverageFlowInRegion(ofRectangle(x, 0, width, smallFrame.rows)).x) > abs(flowsFromLeftToRight[i])) {
+                flowsFromLeftToRight[i] = ofLerp(flowsFromLeftToRight[i], flowFb.getAverageFlowInRegion(ofRectangle(x, 0, width, smallFrame.rows)).x, flowUpSpeed);
             }
             else {
                 flowsFromLeftToRight[i] = ofLerp(flowsFromLeftToRight[i], 0.0, flowDownSpeed);
@@ -83,8 +97,8 @@ void ofApp::update(){
         }
     }
 #else
-        if(abs(flowFb.getAverageFlowInRegion(ofRectangle(0, 0, 320, 240)).x) > abs(flow)) {
-            flow = ofLerp(flow, flowFb.getAverageFlowInRegion(ofRectangle(0, 0, 320, 240)).x, flowUpSpeed);
+        if(abs(flowFb.getAverageFlowInRegion(ofRectangle(0, 0, w, smallFrame.rows)).x) > abs(flow)) {
+            flow = ofLerp(flow, flowFb.getAverageFlowInRegion(ofRectangle(0, 0, w, smallFrame.rows)).x, flowUpSpeed);
         }
         else {
             flow = ofLerp(flow, 0.0, flowDownSpeed);
@@ -120,10 +134,16 @@ void ofApp::draw(){
     circleMask.setUniform2f("size", ofGetWidth(), ofGetHeight());
     buffer.draw(0, 0);
     circleMask.end();
+
+ofDrawBitmapString(ofToString(ofGetFrameRate()), 0, ofGetHeight() - 10);
     
+#ifdef __linux
+if(!frame.empty()) ofxCv::drawMat(frame, ofGetWidth() - w, 0, w, h);
+flowFb.draw(ofGetWidth() - w, 0, h, h);
+#else
     camera.draw(ofGetWidth() - camera.getWidth(), 0);
-    
-    flowFb.draw(ofGetWidth() - camera.getWidth(), 0, 320, 240);
+    flowFb.draw(ofGetWidth() - camera.getWidth(), 0, w, h);
+#endif
         
     gui.draw();
 }
@@ -151,13 +171,13 @@ void ofApp::propagateImpulse(float flow) {
     if(flow < 0) {
         float rate = 0.1;
         for(int i = 0; i < NUM_CRYSTALS; i++) {
-            crystals[valuesFromLeftToRight[i]].setSpeed(ofLerp(crystals[valuesFromLeftToRight[i]].getSpeed(), crystals[valuesFromLeftToRight[i]].getInitialSpeed() + flow * flowEffect, rate));
+            crystals[valuesFromLeftToRight[i]].setSpeed(ofLerp(crystals[valuesFromLeftToRight[i]].getSpeed(), crystals[valuesFromLeftToRight[i]].getSpeed() * 0.01 + flow * flowEffect, rate));
             rate *= propagationFactor;
         }
     } else if(flow > 0) {
         float rate = 0.1;
         for(int i = NUM_CRYSTALS-1; i > -1; i--) {
-            crystals[valuesFromLeftToRight[i]].setSpeed(ofLerp(crystals[valuesFromLeftToRight[i]].getSpeed(), crystals[valuesFromLeftToRight[i]].getInitialSpeed() + flow * flowEffect, rate));
+            crystals[valuesFromLeftToRight[i]].setSpeed(ofLerp(crystals[valuesFromLeftToRight[i]].getSpeed(), crystals[valuesFromLeftToRight[i]].getSpeed() * 0.01 + flow * flowEffect, rate));
             rate *= propagationFactor;
         }
     }
@@ -174,7 +194,7 @@ void ofApp::propagateImpulse(float flow) {
             flowValue = (int)ofMap(i, 0, NUM_CRYSTALS, 0, flowHistory.size());
         else
             flowValue = (int)ofMap(i, 0, NUM_CRYSTALS, flowHistory.size(), 0);
-        crystals[valuesFromLeftToRight[i]].setSpeed(ofLerp(crystals[valuesFromLeftToRight[i]].getSpeed(), crystals[valuesFromLeftToRight[i]].getInitialSpeed() + (flowHistory[flowValue]) * flowEffect, 0.1));
+        crystals[valuesFromLeftToRight[i]].setSpeed(ofLerp(crystals[valuesFromLeftToRight[i]].getSpeed(), crystals[valuesFromLeftToRight[i]].getSpeed() * 0.01 + (flowHistory[flowValue]) * flowEffect, 0.1));
     }
 #endif
     // I reckon this one works even better honestly. Really smooth and comes from the correct side, can change the delay duration by changing the length of the buffer.
@@ -183,7 +203,7 @@ void ofApp::propagateImpulse(float flow) {
     
 #ifdef PROP_LOCATION
     for(int i = 0; i < NUM_CRYSTALS; i++) {
-        crystals[valuesFromLeftToRight[i]].setSpeed(ofLerp(crystals[valuesFromLeftToRight[i]].getSpeed(), crystals[valuesFromLeftToRight[i]].getInitialSpeed() + flowsFromLeftToRight[NUM_CRYSTALS - 1 - i] * flowEffect, 0.1));
+        crystals[valuesFromLeftToRight[i]].setSpeed(ofLerp(crystals[valuesFromLeftToRight[i]].getSpeed(), crystals[valuesFromLeftToRight[i]].getSpeed() * 0.01 + flowsFromLeftToRight[NUM_CRYSTALS - 1 - i] * flowEffect, 0.1));
     }
 #endif
     
