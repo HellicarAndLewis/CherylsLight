@@ -52,11 +52,11 @@ class ofApp : public ofBaseApp{
     int w, h;
 #ifdef __linux
     ofxCvPiCam camera;
-    cv::Mat frame;
-    cv::Mat smallFrame;
 #else
     ofVideoGrabber camera;
 #endif
+    cv::Mat frame;
+    cv::Mat smallFrame;
     
 #ifdef PROP_DELAY
     deque<float> flowHistory;

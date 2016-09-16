@@ -82,6 +82,8 @@ void ofApp::update(){
 #else
     camera.update();
     if(camera.isFrameNew()) {
+        frame = ofxCv::toCv(camera);
+        resize(frame, smallFrame, cv::Size(round(dimFac*frame.cols), round(dimFac*frame.rows)));
         flowFb.calcOpticalFlow(camera);
 #endif
 #ifdef PROP_LOCATION

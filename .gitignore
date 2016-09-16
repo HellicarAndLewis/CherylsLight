@@ -29,3 +29,6 @@
 
 # System files
 .DS_Store
+
+#build files
+test_SpinningLights/build/
