@@ -12,6 +12,7 @@ void ofApp::setup(){
 	
 	serial.listDevices();
 	vector <ofSerialDeviceInfo> deviceList = serial.getDeviceList();
+    
 	
 	// this should be set to whatever com port your serial device is connected to.
 	// (ie, COM4 on a pc, /dev/tty.... on linux, /dev/tty... on a mac)
